@@ -1,0 +1,14 @@
+*{
+    box-shadow: 0%;
+}
+.main{
+    background-image: url("mountain 1.jpg");
+    background-size: cover;
+    height: 500px;
+}
+.head{
+    justify-items: right;
+    justify-content: right;
+    justify-self: right;
+   
+}
