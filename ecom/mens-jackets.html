@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Leather Jackets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #13007e;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --highlight-color: #3498db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        .shipping-banner {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .shipping-banner span {
+            color: var(--light-color);
+            font-weight: 600;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 5%;
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+            margin-right: 30px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            max-width: 100px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            background: #ffffff;
+            width: 240px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+            z-index: 1000;
+            pointer-events: none;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 6px 0;
+            margin-top: 4px;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+            margin-top: 0;
+        }
+
+        .dropdown-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropdown-link:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .dropdown-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--secondary-color);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(0, 0, 0, 0.02);
+            color: var(--secondary-color);
+            padding-left: 24px;
+        }
+
+        .dropdown-link:hover::before {
+            transform: scaleY(1);
+        }
+
+        /* Optional icon styling */
+        .dropdown-link i {
+            margin-right: 12px;
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.4);
+            min-width: 18px;
+            text-align: center;
+            transition: color 0.2s ease;
+        }
+
+        .dropdown-link:hover i {
+            color: var(--secondary-color);
+        }
+
+        /* Nav actions professional styling */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-left: auto;
+        }
+
+
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:focus-within {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+        }
+
+        .search-container input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            width: 230px;
+            font-size: 0.9rem;
+        }
+
+        .search-container button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+        }
+
+        .search-container button:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-icon {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-icon:hover {
+            color: var(--secondary-color);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: -40px;
+            padding: 40px;
+        }
+        
+        /* Jacket Heading */
+        .jacket-heading {
+            position: relative;
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #2c2c2c;
+            padding: 20px 40px;
+            margin: 40px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .jacket-heading::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #c9a66b, #8b5a2b, #c9a66b);
+        }
+        
+        .jacket-heading::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #c9a66b, #8b5a2b, #c9a66b);
+        }
+        
+        .jacket-heading span {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .jacket-heading span::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #8b5a2b;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .search-container input {
+                width: 120px;
+            }
+            
+            .jacket-heading {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0;
+                margin: 15px 0;
+                display: none;
+            }
+
+            .nav-item {
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .dropdown {
+                position: absolute;
+                top: calc(100% + 5px);
+                left: 50%;
+                transform: translateX(-50%);
+                background: white;
+                width: 220px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+                border-radius: 8px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+                z-index: 1000;
+                pointer-events: none;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                padding: 8px 0;
+                margin-top: 5px;
+                }
+
+                .nav-item:hover .dropdown {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                margin-top: 0;
+                }
+
+                .dropdown-link {
+                display: flex;
+                align-items: center;
+                padding: 12px 20px;
+                color: var(--text-color);
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 500;
+                text-transform: capitalize;
+                transition: all 0.2s ease-out;
+                position: relative;
+                overflow: hidden;
+                }
+
+                .dropdown-link:not(:last-child) {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+                }
+
+                .dropdown-link::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 3px;
+                background: var(--secondary-color);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                }
+
+                .dropdown-link:hover {
+                background: rgba(0, 0, 0, 0.015);
+                color: var(--secondary-color);
+                padding-left: 25px;
+                }
+
+                .dropdown-link:hover::before {
+                transform: translateX(0);
+                }
+
+                /* Optional: Add icons to dropdown items */
+                .dropdown-link i {
+                margin-right: 12px;
+                font-size: 0.9rem;
+                color: rgba(0, 0, 0, 0.4);
+                transition: color 0.2s ease;
+                }
+
+                .dropdown-link:hover i {
+                color: var(--secondary-color);
+                }
+            .nav-actions {
+                margin: 15px 0 0;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .search-container {
+                width: 100%;
+            }
+
+            .search-container input {
+                width: 100%;
+            }
+            
+            .jacket-heading {
+                font-size: 2rem;
+                padding: 15px 20px;
+                margin: 20px 0;
+            }
+        }
+        .products-section {
+            --primary: #2a2d3a;       /* Deep navy for headings */
+            --secondary: #d4a762;     /* Gold accent color */
+            --accent: #c32f27;        /* Red for badges/prices */
+            --text: #4a4a4a;          /* Dark gray for text */
+            --light-bg: #f8f5f1;      /* Cream background */
+            --card-bg: #ffffff;       /* White cards */
+            --border: #e0d6c9;       /* Light tan border */
+            
+                padding: 3rem 0;
+                background-color: #f9f9f9;
+                font-family: 'Montserrat', sans-serif;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+         
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(15.3rem, 1fr));
+                gap: 1rem;
+            }
+            
+            .product-card {
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease;
+                width: 270px;
+            }
+            
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                overflow: visible;
+            }
+            
+            .product-image-container {
+                height: 220px;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .product-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+            
+            .product-card:hover .product-image {
+                transform: scale(1.03);
+            }
+            
+            .product-badge {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: var(--accent);
+                color: white;
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+                border-radius: 20px;
+                z-index: 2;
+                font-weight: 600;
+                opacity: 0; /* Hidden by default */
+                transform: translateY(-10px); /* Slight upward shift */
+                transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in effect */
+            }
+            
+            .product-card:hover .product-badge {
+                opacity: 1; /* Show on hover */
+                transform: translateY(0); /* Reset position */
+            }
+            
+            .product-content {
+                padding: 1.25rem;
+            }
+
+            .product-title {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                color: #222;
+                font-weight: 600;
+                line-height: 1.4;
+                margin-left: 10px;
+            }
+            
+            .product-rating {
+                color: #ffb300;
+                font-size: 0.9rem;
+                margin-bottom: 0.75rem;
+                margin-left: 10px;
+            }
+            
+            .product-rating span {
+                color: #666;
+                margin-left: 0.5rem;
+            }
+            
+            .product-price {
+                font-size: 0.9rem;
+                color: #d32727;
+                margin-left: 10px;
+                
+            }
+            
+            .product-price strong {
+                color: #d32f2f;
+                font-size: 1.1rem;
+            }
+            
+            .product-code {
+                color: #666;
+                font-size: 0.8rem;
+                margin-left: 0.5rem;
+            }
+            
+            /* Responsive Adjustments */
+            @media (max-width: 718px) {
+                .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                }
+                
+            }
+            
+            @media (max-width: 430px) {
+                .product-grid {
+                grid-template-columns: 1fr;
+                }
+                
+                .section-title {
+                font-size: 1.5rem;
+                }
+                
+                .product-image-container {
+                height: 220px;
+                }
+            }
+                        /* ===== Professional Trending Products Carousel ===== */
+            .trending-section {
+                --primary: #2a2d3a;       /* Deep navy for headings */
+                --secondary: #d4a762;     /* Gold accent color */
+                --accent: #c32f27;        /* Red for badges/prices */
+                --text: #4a4a4a;          /* Dark gray for text */
+                --light-bg: #f8f5f1;      /* Cream background */
+                --card-bg: #ffffff;       /* White cards */
+                --border: #e0d6c9;       /* Light tan border */
+                
+                padding: 5rem 0;
+                background-color: var(--light-bg);
+                font-family: 'Playfair Display', 'Georgia', serif;
+            }
+            .section-title {
+                text-align: center;
+                font-size: 2.25rem;
+                color: var(--primary);
+                margin-bottom: 3rem;
+                font-weight: 700;
+                position: relative;
+            }
+            
+            .section-title::after {
+                content: '';
+                display: block;
+                width: 100px;
+                height: 3px;
+                background: var(--secondary);
+                margin: 1.25rem auto 0;
+            }
+            
+            /* Carousel Container */
+            .carousel-container {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                padding: 1rem 0 3rem;
+            }
+            
+            .trending-carousel {
+                display: flex;
+                gap: 1.5rem;
+                transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                will-change: transform;
+                padding-bottom: 1rem; /* Space for scrollbar */
+            }
+            
+            /* Hide scrollbar but keep functionality */
+            .trending-carousel::-webkit-scrollbar {
+                display: none;
+            }
+            .trending-carousel {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            
+            .trending-card {
+                flex: 0 0 calc(25% - 1.25rem); /* 4 cards visible */
+                min-width: 280px;
+                scroll-snap-align: start;
+                position: relative;
+            }
+            
+            .product-card {
+                background: var(--card-bg);
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+                transition: all 0.4s ease;
+                border: 1px solid var(--border);
+                height: 100%;
+            }
+            
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            }
+            
+            .product-badge {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                background: var(--accent);
+                color: white;
+                padding: 0.35rem 1rem;
+                font-size: 0.8rem;
+                border-radius: 20px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                z-index: 2;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            
+            .product-image-container {
+                height: 300px;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .product-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            
+            .product-card:hover .product-image {
+                transform: scale(1.05);
+            }
+            
+            .product-content {
+                padding: 1.5rem;
+            }
+            
+            .product-title {
+                font-size: 1.1rem;
+                color: var(--primary);
+                margin-bottom: 1rem;
+                font-weight: 600;
+                line-height: 1.4;
+                min-height: 3.5em;
+            }
+            
+            .product-rating {
+                color: #ffb300;
+                font-size: 0.95rem;
+                margin-bottom: 0.75rem;
+                letter-spacing: 1px;
+            }
+            
+            .product-rating span {
+                color: var(--text);
+                font-size: 0.85rem;
+                margin-left: 0.5rem;
+            }
+            
+            .product-price {
+                font-size: 0.95rem;
+                color:rgba(133, 23, 23, 0.934);
+            }
+            
+            .product-price strong {
+                color: var(--accent);
+                font-size: 1.2rem;
+                font-weight: 700;
+            }
+            
+            
+            /* Navigation Dots */
+            .carousel-dots {
+                display: flex;
+                justify-content: center;
+                gap: 0.75rem;
+                margin-top: 1.5rem;
+                position: relative;
+            }
+            
+            .carousel-dots::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, 
+                            rgba(0,0,0,0) 0%, 
+                            rgba(0,0,0,0.1) 20%, 
+                            rgba(0,0,0,0.1) 80%, 
+                            rgba(0,0,0,0) 100%);
+                z-index: -1;
+            }
+            
+            .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(0,0,0,0.2);
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .dot.active {
+                background: var(--primary);
+                transform: scale(1.3);
+            }
+            
+            /* Navigation Arrows */
+            .carousel-nav {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                background: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border: none;
+                cursor: pointer;
+                z-index: 2;
+                opacity: 0.9;
+                transition: all 0.3s ease;
+            }
+            
+            .carousel-nav:hover {
+                opacity: 1;
+                box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+            }
+            
+            .carousel-prev {
+                left: -20px;
+            }
+            
+            .carousel-next {
+                right: -20px;
+            }
+            
+            .carousel-nav svg {
+                color: var(--primary);
+                width: 16px;
+                height: 16px;
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                .trending-card {
+                flex: 0 0 calc(33.333% - 1.25rem); /* 3 cards */
+                }
+                
+                .product-image-container {
+                height: 260px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .trending-card {
+                flex: 0 0 calc(50% - 1rem); /* 2 cards */
+                min-width: 240px;
+                }
+                
+                .section-title {
+                font-size: 2rem;
+                }
+                
+                .carousel-nav {
+                width: 36px;
+                height: 36px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .trending-card {
+                flex: 0 0 calc(100% - 0.5rem); /* 1 card */
+                min-width: 200px;
+                }
+                
+                .section-title {
+                font-size: 1.75rem;
+                }
+                
+                .carousel-nav {
+                width: 32px;
+                height: 32px;
+                }
+                
+                .carousel-prev {
+                left: -10px;
+                }
+                
+                .carousel-next {
+                right: -10px;
+                }
+            }
+            .fj-difference-section {
+                padding: 6rem 0;
+                background-color: #f8f5f1; /* Light cream background */
+                font-family: 'Montserrat', sans-serif;
+                }
+                
+                .eco-section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                align-items: center;
+                background: #ffffff;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                }
+                
+                .eco-content {
+                padding: 4rem;
+                }
+                
+                .eco-content h3 {
+                font-size: 1.8rem;
+                color: #2a2d3a;
+                margin-bottom: 1.5rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                position: relative;
+                display: inline-block;
+                }
+                
+                .eco-content h3::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: #d4a762; /* Gold accent */
+                }
+                
+                .eco-content p {
+                font-size: 1.1rem;
+                line-height: 1.8;
+                color: #4a4a4a;
+                margin-bottom: 2.5rem;
+                }
+                
+                .read-more-btn {
+                display: inline-flex;
+                align-items: center;
+                color: #c32f27; /* Brand red */
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-size: 1rem;
+                }
+                
+                .read-more-btn:hover {
+                color: #2a2d3a; /* Dark navy */
+                }
+                
+                .read-more-btn::after {
+                content: '→';
+                margin-left: 8px;
+                transition: transform 0.3s ease;
+                }
+                
+                .read-more-btn:hover::after {
+                transform: translateX(5px);
+                }
+                
+                .eco-image {
+                position: relative;
+                height: 100%;
+                min-height: 500px;
+                }
+                
+                .eco-image .image-placeholder {
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, #f8f5f1, #e0d6c9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #d4a762;
+                font-size: 1.2rem;
+                }
+                
+                /* Responsive Design */
+                @media (max-width: 992px) {
+                .eco-section {
+                    gap: 2rem;
+                }
+                
+                .eco-content {
+                    padding: 3rem;
+                }
+                
+                .eco-image {
+                    min-height: 400px;
+                }
+                }
+                
+                @media (max-width: 768px) {
+                .fj-difference-section {
+                    padding: 4rem 0;
+                }
+                
+                .eco-section {
+                    grid-template-columns: 1fr;
+                }
+                
+                .eco-content {
+                    padding: 2.5rem;
+                    order: 2;
+                }
+                
+                .eco-image {
+                    min-height: 350px;
+                    order: 1;
+                }
+                }
+                
+                @media (max-width: 480px) {
+                .eco-content {
+                    padding: 2rem;
+                }
+                
+                .eco-content h3 {
+                    font-size: 1.5rem;
+                }
+                
+                .eco-content p {
+                    font-size: 1rem;
+                }
+                }
+                /* ===== Premium Compact Footer ===== */
+            .footer {
+                --rich-black: #0A0A0A;            /* Primary text color */
+                --dark-charcoal: #2E2E2E;         /* Secondary text */
+                --warm-gray: #6E6E6E;             /* Tertiary text */
+                --ivory: #F9F6F0;                 /* Cream background */
+                --platinum: #E5E5E5;              /* Borders and dividers */
+                --gold-leaf: #B59D6E;             /* Luxury accent color */
+                --transition-speed: 0.35s;        /* Smooth transition timing */
+                
+                background-color: var(--ivory);
+                color: var(--rich-black);
+                font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+                padding: 3.5rem 0 2rem;
+                border-top: 1px solid var(--platinum);
+                line-height: 1.7;
+                font-size: 0.95rem;
+                position: relative;
+            }
+            
+            /* Decorative gold accent line */
+            .footer::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 120px;
+                height: 2px;
+                background: var(--gold-leaf);
+            }
+            
+            /* Main container */
+            .footer-container {
+                max-width: 1240px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 2.5rem;
+                padding: 0 2.5rem;
+            }
+            
+            /* Footer columns */
+            .footer-column {
+                margin-bottom: 1.75rem;
+            }
+            
+            /* Section headers */
+            .footer-column h3 {
+                font-size: 1.15rem;
+                margin-bottom: 1.5rem;
+                font-weight: 600;
+                letter-spacing: 0.8px;
+                color: var(--rich-black);
+                position: relative;
+                padding-bottom: 1rem;
+                text-transform: none;
+                font-variant: small-caps;
+            }
+            
+            .footer-column h3::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 50px;
+                height: 1px;
+                background: var(--gold-leaf);
+                transition: width 0.4s ease;
+            }
+            
+            .footer-column:hover h3::after {
+                width: 70px;
+            }
+            
+            /* Navigation links */
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .footer-links li {
+                margin-bottom: 0.9rem;
+                position: relative;
+                padding-left: 1.25rem;
+            }
+            
+            .footer-links li::before {
+                content: '›';
+                position: absolute;
+                left: 0;
+                color: var(--gold-leaf);
+                font-size: 1.2rem;
+                line-height: 1;
+                top: -1px;
+            }
+            
+            .footer-links a {
+                color: var(--dark-charcoal);
+                text-decoration: none;
+                transition: all var(--transition-speed) ease;
+                display: inline-block;
+                padding: 0.15rem 0;
+                letter-spacing: 0.2px;
+            }
+            
+            .footer-links a:hover {
+                color: var(--rich-black);
+                transform: translateX(4px);
+            }
+            
+            /* Newsletter section */
+            .newsletter-text {
+                color: var(--dark-charcoal);
+                margin-bottom: 1.75rem;
+                line-height: 1.75;
+                max-width: 300px;
+                font-style: italic;
+            }
+            
+            .newsletter-form {
+                display: flex;
+                gap: 1rem;
+                max-width: 380px;
+            }
+            
+            .newsletter-input {
+                flex: 1;
+                margin-top: 50px;
+                padding: 0.95rem 1.25rem;
+                border: 1px solid var(--platinum);
+                font-family: 'Montserrat', sans-serif;
+                font-size: 0.95rem;
+                background-color: white;
+                border-radius: 0;
+                margin-left: -47px;
+                border-bottom: 2px solid var(--gold-leaf);
+                transition: all var(--transition-speed) ease;
+            }
+            
+            .newsletter-input:focus {
+                outline: none;
+                border-color: var(--rich-black);
+                box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            }
+            
+            .newsletter-button {
+                background-color: var(--rich-black);
+                color: white;
+                border: none;
+                padding: 0 2rem;
+                margin-top: 50px;
+                cursor: pointer;
+                font-weight: 500;
+                font-family: 'Montserrat', sans-serif;
+                text-transform: uppercase;
+                font-size: 0.82rem;
+                letter-spacing: 1px;
+                transition: all var(--transition-speed) ease;
+            }
+            
+            .newsletter-button:hover {
+                background-color: var(--gold-leaf);
+                color: var(--rich-black);
+            }
+            
+            /* Footer bottom */
+            .footer-bottom {
+                max-width: 1240px;
+                margin: 4rem auto 0;
+                padding: 2rem 2.5rem 0;
+                text-align: center;
+                color: var(--warm-gray);
+                font-size: 0.85rem;
+                border-top: 1px solid var(--platinum);
+            }
+            
+            .footer-bottom p {
+                margin: 0;
+                padding: 0;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: 0.3px;
+            }
+            
+            .footer-bottom a {
+                color: var(--warm-gray);
+                text-decoration: none;
+                transition: color var(--transition-speed) ease;
+            }
+            
+            .footer-bottom a:hover {
+                color: var(--gold-leaf);
+            }
+            
+            /* Social icons */
+            .social-icons {
+                display: flex;
+                gap: 1.5rem;
+                margin: 2rem 0;
+                justify-content: center;
+            }
+            
+            .social-icons a {
+                color: var(--dark-charcoal);
+                font-size: 1.15rem;
+                transition: all var(--transition-speed) ease;
+            }
+            
+            .social-icons a:hover {
+                color: var(--gold-leaf);
+                transform: translateY(-2px);
+            }
+            
+            /* Responsive design */
+            @media (max-width: 1024px) {
+                .footer-container {
+                gap: 2rem;
+                padding: 0 2rem;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .footer {
+                padding: 3rem 0 1.75rem;
+                }
+                
+                .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .newsletter-form {
+                max-width: 100%;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 0 1.75rem;
+                }
+                
+                .newsletter-form {
+                flex-direction: column;
+                }
+                
+                .newsletter-button {
+                padding: 0.95rem 1rem;
+                width: 100%;
+                }
+                
+                .footer-bottom {
+                padding: 1.75rem 1.75rem 0;
+                margin-top: 3.5rem;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="shipping-banner">
+        FREE SHIPPING <span>+</span> FREE RETURN & EXCHANGE
+    </div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="assete/ata logo.png" alt=""></a>
+
+            <div class="nav-links">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Spring Edits</a>
+                    <div class="dropdown">
+                        <a href="womens-jackets.html" class="dropdown-link">Women's Spring</a>
+                        <a href="mens-jackets.html" class="dropdown-link">Men's Spring</a>
+                        <a href="#" class="dropdown-link">New Arrivals</a>
+                        <a href="#" class="dropdown-link">Spring Essentials</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Men</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-link">T-Shirts</a>
+                        <a href="#" class="dropdown-link">Shirts</a>
+                        <a href="#" class="dropdown-link">Pants</a>
+                        <a href="mens-jackets.html" class="dropdown-link">Jackets</a>
+                        <a href="mens-accessories.html" class="dropdown-link">Accessories</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Women</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-link">Dresses</a>
+                        <a href="#" class="dropdown-link">Tops</a>
+                        <a href="#" class="dropdown-link">Bottoms</a>
+                        <a href="#" class="dropdown-link">Outerwear</a>
+                        <a href="womens-accessories.html" class="dropdown-link">Accessories</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">New Arrivals</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-link">Just In</a>
+                        <a href="#" class="dropdown-link">Trending Now</a>
+                        <a href="#" class="dropdown-link">Limited Edition</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Best Seller</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Prom</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-link">Prom Dresses</a>
+                        <a href="#" class="dropdown-link">Suits</a>
+                        <a href="#" class="dropdown-link">Shoes</a>
+                        <a href="#" class="dropdown-link">Accessories</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Core & Tips</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Brand & Support</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-link">About Us</a>
+                        <a href="#" class="dropdown-link">Customer Service</a>
+                        <a href="#" class="dropdown-link">FAQs</a>
+                        <a href="#" class="dropdown-link">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <a href="#" class="nav-icon">
+                    <i class="far fa-user"></i>
+                </a>
+
+                <a href="#" class="nav-icon">
+                    <i class="far fa-heart"></i>
+                </a>
+
+                <a href="#" class="nav-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="jacket-heading"><span>MEN'S LEATHER JACKETS</span></h1>
+        <!-- Content will go here -->
+    </main>
+    <div class="products-section">
+        <div class="container">          
+            <div class="product-grid">
+             <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">S3-G7</div>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                    </div>
+                    <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                    <div class="product-rating">★★★★☆ <span>58</span></div>
+                    <div class="product-price">Get it For<strong>$189</strong></div>
+                </div>
+                              
+                
+                              
+            </div>
+        </div>    
+    </div>
+    <div class="trending-section">
+        <div class="container">
+          <h2 class="section-title">Trending Now</h2>
+          
+          <div class="carousel-container">
+                <div class="trending-carousel">
+                 <!-- Product 1 -->
+                 <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G4</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" alt="Women's Leather Coat" class="product-image">
+                        </div>
+                        <h3 class="product-title">Narsino Womens Block Three Quarter Long Leather Coat</h3>
+                        <div class="product-rating">★★★★☆ <span>21</span></div>
+                        <div class="product-price">Get It For <strong>$189</strong></div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G7</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                        </div>
+                        <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                        <div class="product-rating">★★★★☆ <span>58</span></div>
+                        <div class="product-price">Get it For<strong>$189</strong></div>
+                    </div>
+                </div>
+             <!-- Product 1 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G4</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" alt="Women's Leather Coat" class="product-image">
+                        </div>
+                        <h3 class="product-title">Narsino Womens Block Three Quarter Long Leather Coat</h3>
+                        <div class="product-rating">★★★★☆ <span>21</span></div>
+                        <div class="product-price">Get It For <strong>$189</strong></div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G7</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                        </div>
+                        <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                        <div class="product-rating">★★★★☆ <span>58</span></div>
+                        <div class="product-price">Get it For<strong>$189</strong></div>
+                    </div>
+                </div>
+             <!-- Product 1 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G4</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" alt="Women's Leather Coat" class="product-image">
+                        </div>
+                        <h3 class="product-title">Narsino Womens Block Three Quarter Long Leather Coat</h3>
+                        <div class="product-rating">★★★★☆ <span>21</span></div>
+                        <div class="product-price">Get It For <strong>$189</strong></div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G7</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                        </div>
+                        <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                        <div class="product-rating">★★★★☆ <span>58</span></div>
+                        <div class="product-price">Get it For<strong>$189</strong></div>
+                    </div>
+                </div>
+             <!-- Product 1 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G4</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" alt="Women's Leather Coat" class="product-image">
+                        </div>
+                        <h3 class="product-title">Narsino Womens Block Three Quarter Long Leather Coat</h3>
+                        <div class="product-rating">★★★★☆ <span>21</span></div>
+                        <div class="product-price">Get It For <strong>$189</strong></div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G7</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                        </div>
+                        <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                        <div class="product-rating">★★★★☆ <span>58</span></div>
+                        <div class="product-price">Get it For<strong>$189</strong></div>
+                    </div>
+                </div>
+             <!-- Product 1 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G4</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" alt="Women's Leather Coat" class="product-image">
+                        </div>
+                        <h3 class="product-title">Narsino Womens Block Three Quarter Long Leather Coat</h3>
+                        <div class="product-rating">★★★★☆ <span>21</span></div>
+                        <div class="product-price">Get It For <strong>$189</strong></div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G7</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                        </div>
+                        <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                        <div class="product-rating">★★★★☆ <span>58</span></div>
+                        <div class="product-price">Get it For<strong>$189</strong></div>
+                    </div>
+                </div>
+             <!-- Product 1 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G4</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" alt="Women's Leather Coat" class="product-image">
+                        </div>
+                        <h3 class="product-title">Narsino Womens Block Three Quarter Long Leather Coat</h3>
+                        <div class="product-rating">★★★★☆ <span>21</span></div>
+                        <div class="product-price">Get It For <strong>$189</strong></div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G7</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                        </div>
+                        <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                        <div class="product-rating">★★★★☆ <span>58</span></div>
+                        <div class="product-price">Get it For<strong>$189</strong></div>
+                    </div>
+                </div>
+             <!-- Product 1 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G4</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" alt="Women's Leather Coat" class="product-image">
+                        </div>
+                        <h3 class="product-title">Narsino Womens Block Three Quarter Long Leather Coat</h3>
+                        <div class="product-rating">★★★★☆ <span>21</span></div>
+                        <div class="product-price">Get It For <strong>$189</strong></div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="trending-card">
+                    <!-- Your product card content -->
+                    <div class="product-card">
+                        <div class="product-badge">S3-G7</div>
+                        <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format" alt="Brown Cafe Racer Jacket" class="product-image">
+                        </div>
+                        <h3 class="product-title">Mens Chocolate Brown Cafe Racer Leather Jacket - Quilted Shoulders</h3>
+                        <div class="product-rating">★★★★☆ <span>58</span></div>
+                        <div class="product-price">Get it For<strong>$189</strong></div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>  
+            <!-- Navigation Dots -->
+            <div class="carousel-dots"></div>
+        </div>
+    </div>
+    <div class="fj-difference-section">
+        <div class="container">
+          
+          <div class="eco-section">
+            <div class="eco-content">
+              <h3>ECO-SUSTAINABLE</h3>
+              <p>We believe in style with a conscience. Each jacket is crafted from locally sourced leather raised for food to ensure minimal waste. By choosing our eco-friendly, durable designs, you're investing in long-lasting quality while caring for the planet.</p>
+              <a href="#" class="read-more-btn">Read More →</a>
+            </div>
+            <div class="eco-image">
+              <!-- Image would go here -->
+              <div class="image-placeholder">
+                <img src="assete/Eco-Sustainable.webp" alt="eco box">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+      
+      <!-- F Jackets Column -->
+      <div class="footer-column">
+        <h3>F Jackets</h3>
+        <ul class="footer-links">
+          <li><a href="#">FOR MEN</a></li>
+          <li><a href="#">FOR WOMEN</a></li>
+          <li><a href="#">CARE & MAINTENANCE</a></li>
+          <li><a href="#">ABOUT US</a></li>
+        </ul>
+      </div>
+      
+      <!-- Customer Care Column -->
+      <div class="footer-column">
+        <h3>Customer Care</h3>
+        <ul class="footer-links">
+          <li><a href="#"><strong>Track Order</strong></a></li>
+          <li><a href="#">Shipping & Delivery</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+      </div>
+      
+      <!-- Newsletter Column -->
+      <div class="footer-column">
+        <h3>Let's Stay in Touch</h3>
+        <p class="newsletter-text">Be the first to know about new products, promos, & exclusive offers...</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email" class="newsletter-input">
+          <button class="newsletter-button">Subscribe</button>
+        </div>
+      </div>
+      
+      <!-- Contact Column -->
+      <div class="footer-column">
+        <h3>Need Assistance?</h3>
+        <ul class="footer-links">
+          <li><a href="#"><strong>Contact Us</strong></a></li>
+          <li><a href="#">Chat with us</a></li>
+          <li><a href="mailto:support@fjackets.com">support@fjackets.com</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>All prices are in USD. Copyright © 2025 FJackets. <a href="#">Sitemap</a></p>
+    </div>
+  </footer>
+  
+
+<script src="script.js"></script>
+
+</body>
+</html>
