@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Leather Jacket | ATA Leather</title>
+    <style>
+        :root {
+            --primary: #13007e;
+            --primary-light: #3a29a8;
+            --primary-dark: #0c0052;
+            --secondary: #ff7d00;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Product Section */
+        .product-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 30px auto;
+            overflow: hidden;
+        }
+        
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Product Gallery */
+        .product-gallery {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background: var(--light-gray);
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .thumbnail:hover {
+            border-color: var(--primary);
+        }
+        
+        /* Product Details */
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            border-left: 1px solid var(--light-gray);
+        }
+        
+        .product-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 10px;
+            color: var(--primary-dark);
+        }
+        
+        .product-brand {
+            color: var(--gray);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .price-container {
+            margin: 20px 0;
+        }
+        
+        .current-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            margin-left: 10px;
+        }
+        
+        .discount-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .product-description {
+            margin: 25px 0;
+            color: var(--dark);
+        }
+        
+        /* Variants */
+        .variant-option {
+            margin: 15px 0;
+        }
+        
+        .variant-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .variant-selector {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .variant-btn {
+            padding: 8px 15px;
+            border: 1px solid var(--light-gray);
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .variant-btn:hover, .variant-btn.active {
+            border-color: var(--primary);
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Quantity & Add to Cart */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+        }
+        
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--light-gray);
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        .qty-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+            margin: 0 5px;
+        }
+        
+        .add-to-cart {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .buy-now {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .buy-now:hover {
+            opacity: 0.9;
+        }
+        
+        /* Product Tabs */
+        .product-tabs {
+            margin: 40px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tabs-header {
+            display: flex;
+            border-bottom: 1px solid var(--light-gray);
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--gray);
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+        }
+        
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .tab-content {
+            padding: 25px;
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+            
+            .product-details {
+                border-left: none;
+                border-top: 1px solid var(--light-gray);
+            }
+            
+            .main-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header would be included from your existing site -->
+    <header class="header">
+        <div class="container">
+            <!-- Your existing header content -->
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="product-section">
+            <div class="product-container">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <img src="assete/Capture.PNG" alt="ATA Leather Premium Jacket" class="main-image" id="mainImage">
+                    <div class="thumbnail-container">
+                        <img src="assete/Capture.PNG" alt="ATA Leather Jacket Front View" class="thumbnail" onclick="changeImage(this)">
+                        <img src="assete/ata logo.png" alt="ATA Leather Brand Logo" class="thumbnail" onclick="changeImage(this)">
+                        <img src="assete/Eco-Sustainable.webp" alt="ATA Leather Eco-Friendly Materials" class="thumbnail" onclick="changeImage(this)">
+                        <img src="assete/women.PNG" alt="ATA Leather Jacket on Model" class="thumbnail" onclick="changeImage(this)">
+                    </div>
+                </div>
+                
+                <!-- Product Details -->
+                <div class="product-details">
+                    <h1 class="product-title">Premium Genuine Leather Jacket</h1>
+                    <p class="product-brand">By <a href="#" style="color: var(--primary);">ATA LEATHER</a></p>
+                    
+                    <div class="price-container">
+                        <span class="current-price">$349.99</span>
+                        <span class="original-price">$429.99</span>
+                        <span class="discount-badge">19% OFF</span>
+                    </div>
+                    
+                    <div class="rating">
+                        <!-- Star rating component would go here -->
+                        <span style="color: var(--gray);">4.9 (842 reviews)</span>
+                    </div>
+                    
+                    <p class="product-description">
+                        Crafted from premium full-grain leather, our signature jacket combines timeless style with exceptional durability. Designed for both fashion and function, it features a classic biker silhouette with modern comfort enhancements.
+                    </p>
+                    
+                    <!-- Color Variant -->
+                    <div class="variant-option">
+                        <span class="variant-title">Color:</span>
+                        <div class="variant-selector">
+                            <button class="variant-btn active">Classic Black</button>
+                            <button class="variant-btn">Chestnut Brown</button>
+                            <button class="variant-btn">Distressed Tan</button>
+                            <button class="variant-btn">Oxblood Red</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Size Variant -->
+                    <div class="variant-option">
+                        <span class="variant-title">Size:</span>
+                        <div class="variant-selector">
+                            <button class="variant-btn">XS</button>
+                            <button class="variant-btn">S</button>
+                            <button class="variant-btn active">M</button>
+                            <button class="variant-btn">L</button>
+                            <button class="variant-btn">XL</button>
+                            <button class="variant-btn">XXL</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Fit Guide -->
+                    <div style="margin: 15px 0; font-size: 14px;">
+                        <a href="#" style="color: var(--primary); text-decoration: underline;">View size guide</a>
+                    </div>
+                    
+                    <!-- Quantity Selector -->
+                    <div class="quantity-selector">
+                        <span class="variant-title">Quantity:</span>
+                        <div style="display: flex; margin-top: 10px;">
+                            <button class="qty-btn">-</button>
+                            <input type="number" value="1" min="1" class="qty-input">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                    
+                    <!-- Shipping Info -->
+                    <div style="margin-top: 20px; font-size: 14px; color: var(--gray);">
+                        <p>✈️ Free worldwide shipping on orders over $1000</p>
+                        <p>🔄 45-day free returns</p>
+                        <p>🔒 Secure checkout</p>
+                        <p>🧵 Handcrafted with care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product Tabs -->
+        <div class="product-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="openTab(event, 'description')">Description</button>
+                <button class="tab-btn" onclick="openTab(event, 'materials')">Materials & Care</button>
+                <button class="tab-btn" onclick="openTab(event, 'specs')">Specifications</button>
+                <button class="tab-btn" onclick="openTab(event, 'reviews')">Reviews</button>
+            </div>
+            
+            <div id="description" class="tab-content active">
+                <h3>Product Description</h3>
+                <p>The ATA Leather Premium Jacket represents the pinnacle of leather craftsmanship. Designed for those who appreciate both style and substance, this jacket will develop a beautiful patina over time, becoming even more unique with each wear.</p>
+                
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Made from premium full-grain leather that ages beautifully</li>
+                    <li>Hand-stitched seams for superior durability</li>
+                    <li>Classic biker silhouette with asymmetrical zipper</li>
+                    <li>Soft quilted lining for comfort in all seasons</li>
+                    <li>Multiple interior pockets for secure storage</li>
+                    <li>Adjustable waist and cuffs for perfect fit</li>
+                    <li>Eco-friendly tanning process</li>
+                </ul>
+                
+                <h4>About ATA Leather:</h4>
+                <p>Since 1985, ATA Leather has been crafting premium leather goods using traditional techniques combined with modern innovation. Each piece is made by skilled artisans who take pride in their workmanship.</p>
+            </div>
+            
+            <div id="materials" class="tab-content">
+                <h3>Materials & Care</h3>
+                <h4>Materials:</h4>
+                <ul>
+                    <li><strong>Outer Shell:</strong> 100% full-grain premium leather (1.2-1.4mm thickness)</li>
+                    <li><strong>Lining:</strong> 100% breathable cotton quilted lining</li>
+                    <li><strong>Hardware:</strong> Solid brass zippers and buttons</li>
+                </ul>
+                
+                <h4>Care Instructions:</h4>
+                <ul>
+                    <li>Use a damp cloth to wipe away surface dirt</li>
+                    <li>Condition with leather cream every 6 months</li>
+                    <li>Store on a wide hanger to maintain shape</li>
+                    <li>Avoid prolonged exposure to direct sunlight</li>
+                    <li>Professional cleaning recommended</li>
+                </ul>
+                
+                <p><strong>Note:</strong> Natural leather may have slight variations in texture and color, which add to its unique character.</p>
+            </div>
+            
+            <div id="specs" class="tab-content">
+                <h3>Specifications</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--light-gray);">
+                        <td style="padding: 10px 0; font-weight: 600;">Product Type</td>
+                        <td style="padding: 10px 0;">Biker-style Leather Jacket</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--light-gray);">
+                        <td style="padding: 10px 0; font-weight: 600;">Leather Type</td>
+                        <td style="padding: 10px 0;">Full-grain cowhide</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--light-gray);">
+                        <td style="padding: 10px 0; font-weight: 600;">Lining</td>
+                        <td style="padding: 10px 0;">Quilted cotton</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--light-gray);">
+                        <td style="padding: 10px 0; font-weight: 600;">Closure</td>
+                        <td style="padding: 10px 0;">Asymmetrical zipper with snap buttons</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--light-gray);">
+                        <td style="padding: 10px 0; font-weight: 600;">Pockets</td>
+                        <td style="padding: 10px 0;">2 external, 3 internal</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--light-gray);">
+                        <td style="padding: 10px 0; font-weight: 600;">Weight</td>
+                        <td style="padding: 10px 0;">Approx. 2.2kg (size M)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--light-gray);">
+                        <td style="padding: 10px 0; font-weight: 600;">Origin</td>
+                        <td style="padding: 10px 0;">Handcrafted in Italy</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="reviews" class="tab-content">
+                <h3>Customer Reviews</h3>
+                <div style="background: var(--light-gray); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary);">4.9</div>
+                        <div style="margin-left: 15px;">
+                            <div style="color: gold;">★★★★★</div>
+                            <div style="font-size: 14px; color: var(--gray);">Based on 842 reviews</div>
+                        </div>
+                    </div>
+                    <button style="background: var(--primary); color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">Write a Review</button>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h4>Featured Reviews</h4>
+                    <div style="border: 1px solid var(--light-gray); border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="font-weight: bold;">Michael T.</div>
+                            <div style="color: gold;">★★★★★</div>
+                        </div>
+                        <div style="font-size: 14px; color: var(--gray); margin: 5px 0;">Verified Purchase | October 2023</div>
+                        <p>"The quality of this jacket is exceptional. After 6 months of wear, it's only gotten better looking. The leather has developed a beautiful patina."</p>
+                    </div>
+                    
+                    <div style="border: 1px solid var(--light-gray); border-radius: 8px; padding: 15px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="font-weight: bold;">Sarah K.</div>
+                            <div style="color: gold;">★★★★★</div>
+                        </div>
+                        <div style="font-size: 14px; color: var(--gray); margin: 5px 0;">Verified Purchase | September 2023</div>
+                        <p>"Worth every penny. The jacket fits perfectly and the craftsmanship is evident in every detail. I get compliments every time I wear it."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // Change product image when thumbnail is clicked
+        function changeImage(element) {
+            document.getElementById('mainImage').src = element.src;
+        }
+        
+        // Variant selection
+        const variantBtns = document.querySelectorAll('.variant-btn');
+        variantBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons in this variant group
+                this.parentElement.querySelectorAll('.variant-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                // Add active class to clicked button
+                this.classList.add('active');
+            });
+        });
+        
+        // Quantity selector
+        const qtyMinus = document.querySelector('.qty-btn:first-child');
+        const qtyPlus = document.querySelector('.qty-btn:last-child');
+        const qtyInput = document.querySelector('.qty-input');
+        
+        qtyMinus.addEventListener('click', function() {
+            if (qtyInput.value > 1) qtyInput.value--;
+        });
+        
+        qtyPlus.addEventListener('click', function() {
+            qtyInput.value++;
+        });
+        
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

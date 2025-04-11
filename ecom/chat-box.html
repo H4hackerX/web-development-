@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Chat Container */
+        .chat-container {
+            position: fixed;
+            bottom: 90px; /* Position above the toggle button */
+            right: 20px;
+            width: 350px;
+            height: 450px; /* Fixed height */
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+            display: flex;
+            
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .chat-container.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        /* Chat Header */
+        .chat-header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chat-title {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        /* Chat Body */
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+        
+        .message {
+            margin-bottom: 12px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+        }
+        
+        .bot-message {
+            background: white;
+            border: 1px solid #eee;
+            border-top-left-radius: 4px;
+            align-self: flex-start;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            margin-left: auto;
+            border-top-right-radius: 4px;
+        }
+        
+        /* Typing Indicator */
+        .typing-indicator {
+            display: flex;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 18px;
+            border: 1px solid #eee;
+            width: fit-content;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #a777e3;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        /* Quick Replies */
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .quick-reply {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quick-reply:hover {
+            background: #f0f0f0;
+        }
+        
+        /* Chat Footer */
+        .chat-footer {
+            padding: 12px;
+            border-top: 1px solid #eee;
+            display: flex;
+        }
+        
+        .chat-input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 10px 15px;
+            outline: none;
+            font-size: 14px;
+        }
+        
+        .chat-send {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Chat Toggle Button */
+        .chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4757;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Chat Toggle Button -->
+    <div class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comment-dots"></i>
+        <div class="chat-badge" id="chatBadge">1</div>
+    </div>
+    
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="chat-title">Customer Support</div>
+            <button class="chat-close" id="chatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message bot-message">
+                Hi there! 👋 How can we help you today?
+            </div>
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+            <button class="chat-send" id="chatSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Chat Functionality
+        const chatToggle = document.getElementById('chatToggle');
+        const chatContainer = document.getElementById('chatContainer');
+        const chatClose = document.getElementById('chatClose');
+        const chatBody = document.getElementById('chatBody');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+        const typingIndicator = document.getElementById('typingIndicator');
+        const chatBadge = document.getElementById('chatBadge');
+        
+        // Hover to show chat
+        chatToggle.addEventListener('mouseenter', () => {
+            chatContainer.classList.add('open');
+        });
+        
+        // Click to toggle (for mobile)
+        chatToggle.addEventListener('click', () => {
+            chatContainer.classList.toggle('open');
+            chatBadge.style.display = 'none';
+        });
+        
+        // Keep open when hovering container
+        chatContainer.addEventListener('mouseenter', () => {
+            chatContainer.classList.add('open');
+        });
+        
+        // Hide when leaving both elements
+        [chatToggle, chatContainer].forEach(el => {
+            el.addEventListener('mouseleave', () => {
+                setTimeout(() => {
+                    if (!chatContainer.matches(':hover') && !chatToggle.matches(':hover')) {
+                        chatContainer.classList.remove('open');
+                    }
+                }, 300);
+            });
+        });
+        
+        // Close Chat
+        chatClose.addEventListener('click', () => {
+            chatContainer.classList.remove('open');
+        });
+        
+        // Send Message
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // Add user message
+                addMessage(message, 'user');
+                chatInput.value = '';
+                
+                // Show typing indicator
+                typingIndicator.style.display = 'flex';
+                
+                // Simulate bot response after delay
+                setTimeout(() => {
+                    typingIndicator.style.display = 'none';
+                    const responses = [
+                        "I'd be happy to help with that!",
+                        "Our team can assist you with this matter.",
+                        "Thanks for your question! Let me check that for you.",
+                        "We have several options available for that."
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse, 'bot');
+                    
+                    // Add quick replies for common questions
+                    if (Math.random() > 0.5) {
+                        addQuickReplies();
+                    }
+                }, 1500);
+            }
+        }
+        
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender + '-message');
+            messageDiv.textContent = text;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+        
+        // Add quick reply buttons
+        function addQuickReplies() {
+            const quickReplies = [
+                "Order status",
+                "Return policy",
+                "Payment options",
+                "Product availability"
+            ];
+            
+            const quickReplyDiv = document.createElement('div');
+            quickReplyDiv.classList.add('quick-replies');
+            
+            quickReplies.forEach(reply => {
+                const button = document.createElement('div');
+                button.classList.add('quick-reply');
+                button.textContent = reply;
+                button.addEventListener('click', () => {
+                    chatInput.value = reply;
+                    sendMessage();
+                });
+                quickReplyDiv.appendChild(button);
+            });
+            
+            chatBody.appendChild(quickReplyDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+        
+        // Event Listeners
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Show chat badge after 5 seconds if not opened
+        setTimeout(() => {
+            if (!chatContainer.classList.contains('open')) {
+                chatBadge.style.display = 'flex';
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
