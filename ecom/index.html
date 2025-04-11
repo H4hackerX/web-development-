@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Apparel | Spring Collection</title>
     <link rel="stylesheet" href="styles.css">
-    <link
-    rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -18,7 +17,7 @@
 
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo"><img class="animate__animated animate__flip" src="assete/ata logo.png" alt=""></a>
+            <a href="index.html" class="logo"><img src="assete/ata logo.png" alt=""></a>
 
             <div class="nav-links">
                 <div class="nav-item">
@@ -89,6 +88,7 @@
                     <input type="text" placeholder="Search products...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
+
                 <div class="nav-icon-container">
                   <a href="#" class="nav-icon">
                     <i class="far fa-user"></i>
@@ -98,8 +98,6 @@
                     <a href="#">Settings</a>
                   </div>
                 </div>
-              
-
 
                 <a href="#" class="nav-icon">
                     <i class="far fa-heart"></i>
@@ -124,6 +122,38 @@
             </div>
         </div>
     </section>
+    <!-- Chat Toggle Button -->
+    <div class="chat-toggle" id="chatToggle">
+      <i class="fas fa-comment-dots"></i>
+      <div class="chat-badge" id="chatBadge">1</div>
+  </div>
+  
+  <!-- Chat Container -->
+  <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+          <div class="chat-title">Customer Support</div>
+          <button class="chat-close" id="chatClose">
+              <i class="fas fa-times"></i>
+          </button>
+      </div>
+      <div class="chat-body" id="chatBody">
+          <div class="message bot-message">
+              Hi there! 👋 How can we help you today?
+          </div>
+          <div class="typing-indicator" id="typingIndicator" style="display: none;">
+              <div class="typing-dot"></div>
+              <div class="typing-dot"></div>
+              <div class="typing-dot"></div>
+          </div>
+      </div>
+      <div class="chat-footer">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+          <button class="chat-send" id="chatSend">
+              <i class="fas fa-paper-plane"></i>
+          </button>
+      </div>
+  </div>
+
    <div class="review-card">
         <div class="review-header">
             <div class="review-count">35,000</div>
@@ -232,7 +262,7 @@
             <div class="container">
               <h2 class="section-title">Our Best Sellers</h2>
               
-              <div class="product-grid">
+              <div class="product-grid" onclick="location.href='product-page.html'">
                 <!-- Product 1 -->
                 <div class="product-card">
                   <div class="product-badge">S3-G7</div>
